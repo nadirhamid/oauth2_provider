@@ -179,7 +179,7 @@ class AuthorizationProvider(BaseProvider):
         if not is_redirect_uri_valid:
             return self.invalid_request()
 
-        is_scope_valid = self.verify_scope(scope)
+        is_scope_valid = self.verify_scope(client_id,scope)
 
         if not is_scope_valid:
             return self.invalid_scope(
